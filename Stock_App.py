@@ -10,7 +10,7 @@ import yfinance as yf
 from sklearn.metrics import mean_squared_error
 import streamlit as st
 
-com_dict={"TATASTEEL.NS":"Tatasteel_pred.h5","ADANIGREEN.NS":"Adani_green_enery.h5"}
+com_dict={"TATASTEEL.NS":"Tatasteel_pred.h5","ADANIGREEN.NS":"Adani_green_enery.h5","BHARTIARTL.NS":"Bharti_Airtel.h5"}
 
 st.title("Stock Price Prediction")
 
