@@ -12,7 +12,7 @@ import streamlit as st
 from streamlit_lottie import st_lottie
 
 com_dict={"TATASTEEL.NS":"Tatasteel_pred.h5","ADANIGREEN.NS":"Adani_green_enery.h5"}
-st_lottie("https://assets2.lottiefiles.com/private_files/lf30_F3v2Nj.json", key="user")
+st_lottie("112959-flatting-stocks.json", key="user")
 
 st.title("Stock Price Prediction")
 
