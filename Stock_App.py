@@ -10,11 +10,11 @@ import yfinance as yf
 from sklearn.metrics import mean_squared_error
 import streamlit as st
 
-com_dict={"TATASTEEL.NS":"Tatasteel_pred.h5","^NSEBANK":"Nifty_bank.h5","ADANIGREEN.NS":"Adani_green_enery.h5"}
+com_dict={"TATASTEEL.NS":"Tatasteel_pred.h5","ADANIGREEN.NS":"Adani_green_enery.h5"}
 
 st.title("Stock Price Prediction")
 
-company = st.text_input("Enter Stock Ticker","^NSEBANK")
+company = st.text_input("Enter Stock Ticker","TATASTEEL.NS")
 curr_time = dt.datetime.now()
 hour = curr_time.hour + 60
 minutes = curr_time.minute
