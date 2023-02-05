@@ -2,6 +2,7 @@ from pandas_datareader import data as pdr
 import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.preprocessing import MinMaxScaler
+import tensorflow as tf
 from keras.models import  load_model
 import math
 import datetime as dt
