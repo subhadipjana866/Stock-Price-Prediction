@@ -11,6 +11,7 @@ from sklearn.metrics import mean_squared_error
 import streamlit as st
 
 com_dict={"TATASTEEL.NS":"Tatasteel_pred.h5","ADANIGREEN.NS":"Adani_green_enery.h5"}
+st_lottie("https://assets2.lottiefiles.com/private_files/lf30_F3v2Nj.json", key="user")
 
 st.title("Stock Price Prediction")
 
