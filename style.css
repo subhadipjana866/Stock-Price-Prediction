@@ -1,0 +1,46 @@
+.css-1avcm0n::after{
+    content: "Stock Price Prediction";
+    color: white;
+    font-weight: 600;
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 23px;
+    margin: 12px;
+    position: absolute;
+}
+
+.css-1avcm0n{
+    height: 3.875rem;
+    position: relative;
+    z-index: 99999;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(20px);
+    transition: .6s ease;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0px 0px 20px rgba(0 0 0 / 10%);
+}
+#MainMenu{
+    margin-top: 12px;
+}
+.css-4z1n4l{
+    margin-top: 12px;
+    height: 1rem;
+}
+.css-91z34k {
+    width: 100%;
+    padding: 3rem 1rem 8rem;
+    max-width: 80rem;
+}
+.css-1fv8s86{
+    color: rgb(199, 199, 199);
+}
+.css-1fv8s86 p{
+    font-size: 24px;
+    font-weight: 600;
+}
+.css-1yy6isu p{
+    font-size: 15px;
+    font-weight: 400;
+}
