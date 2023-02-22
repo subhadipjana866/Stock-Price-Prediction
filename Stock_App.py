@@ -2,7 +2,6 @@ from pandas_datareader import data as pdr
 import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.preprocessing import MinMaxScaler
-import tensorflow as tf
 from keras.models import  load_model
 import math
 import datetime as dt
@@ -13,12 +12,15 @@ import streamlit as st
 with open('style.css')as f:
  st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html = True)
 
-com_dict={"TATASTEEL.NS":"Data/Tatasteel_pred.h5","ADANIGREEN.NS":"Data/Adani_green_enery.h5","BHARTIARTL.NS":"Data/Bharti_Airtel.h5"}
-
+com_dict={"Tata Steel":"TATASTEEL.NS","Adani Green Energy":"ADANIGREEN.NS","Airtel":"BHARTIARTL.NS","UPL":"UPL.NS","Ultra Tech Cement":"ULTRACEMCO.NS","Tech Mahindra":"TECHM.NS","Tata Consultancy Services":"TCS.NS","Tata Consumer Products":"TATACONSUM.NS","NTPC":"NTPC.NS","Mahindra & Mahindra":"M&M.NS","Kotak Bank":"KOTAKBANK.NS","Indusland Bank":"INDUSINDDBK.NS","ICICI Bank":"ICICIBANK.NS","HDFC Bank":"HDFC.NS","Coal India":"COALINDIA.NS","AU Bank":"AUBANK.NS"}
+mod_dict = {"TATASTEEL.NS":"Data/TATASTEEL.h5","ADANIGREEN.NS":"Data/ADANIGREEN.h5","BHARTIARTL.NS":"Data/BHARTIARTL.h5","UPL.NS":"Data/UPL.h5","ULTRACEMCO.NS":"Data/ULTRACEMCO.h5","TECHM.NS":"Data/TECHM.h5","TCS.NS":"Data/TCS.h5","TATACONSUM.NS":"Data/TATACONSUM.h5","NTPC.NS":"Data/NTPC.h5","M&M.NS":"Data/M&M.h5","KOTAKBANK.NS":"Data/KOTAKBANK.h5","INDUSINDDBK.NS":"Data/INDUSINDDBK.h5","ICICIBANK.NS":"Data/ICICIBANK.h5","HDFC.NS":"Data/HDFC.h5","COALINDIA.NS":"Data/COALINDIA.h5","AUBANK.NS":"Data/AUBANK.h5"}
 
 st.write("This software currently support all NIFTY50 and BANKNIFTY stocks for prediction.")
 
-company = st.text_input("Enter Stock Ticker","TATASTEEL.NS")
+option = st.selectbox("Select the company",("Tata Steel","Adani Green Energy","Airtel","UPL","Ultra Tech Cement","Tech Mahindra","Tata Consultancy Services","Tata Consumer Products","NTPC","Mahindra & Mahindra","Kotak Bank","Indusland Bank","ICICI Bank","HDFC Bank","Coal India","AU Bank"))
+
+
+company = com_dict[option]
 curr_time = dt.datetime.now()
 hour = curr_time.hour + 60
 minutes = curr_time.minute
@@ -58,7 +60,7 @@ x_train = x_train.reshape(x_train.shape[0],x_train.shape[1],1)
 
 
 
-model = load_model(com_dict[company])
+model = load_model(mod_dict[company])
 
 train_predict = model.predict(x_train)
 train_predict = scaler.inverse_transform(train_predict)
