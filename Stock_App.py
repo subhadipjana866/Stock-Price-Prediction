@@ -17,7 +17,7 @@ mod_dict = {"TATASTEEL.NS":"Data/TATASTEEL.h5","ADANIGREEN.NS":"Data/ADANIGREEN.
 
 st.write("This software currently support all NIFTY50 and BANKNIFTY stocks for prediction.")
 
-option = st.selectbox("Select the company",("Tata Steel","Adani Green Energy","Airtel","UPL","Ultra Tech Cement","Tech Mahindra","Tata Consultancy Services","Tata Consumer Products","NTPC","Mahindra & Mahindra","Kotak Bank","Indusland Bank","ICICI Bank","HDFC Bank","Coal India","AU Bank"))
+option = st.selectbox("Select the company",("Tata Steel","Adani Green Energy","Airtel","UPL","Ultra Tech Cement","Tech Mahindra","Tata Consultancy Services","Tata Consumer Products","NTPC","Mahindra & Mahindra","Kotak Bank","Indusland Bank","ICICI Bank","HDFC Bank","Coal India","AU Bank","Adani Enterprise","Adani Ports","Apollo Hospital","Axis Bank","Bajaj Auto","Britannia","Grasim","HDFC Bank","HDFC Life Insuarance","IDFC First Bank","Reliance","Sun Pharma"))
 
 
 company = com_dict[option]
