@@ -67,6 +67,7 @@ testPredictPlot = np.empty_like(df1)
 testPredictPlot[:,:] = np.nan
 testPredictPlot[100:len(test_data)-1,:] = test_predict
 
+st.write("Testing the prediction accuracy with test data")
 fig1 = plt.figure(figsize = (12,6))
 plt.rcParams['text.color'] = 'black'
 plt.plot(scaler.inverse_transform(test_data),label="actual_data")
