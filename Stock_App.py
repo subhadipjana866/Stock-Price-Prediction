@@ -110,7 +110,7 @@ while(i<prediction_days):
 output_price = scaler.inverse_transform(lst_output)
 xy =[]
 for i in range(prediction_days):
-   xy.append(f"Days {i}")
+   xy.append(f"{i}")
 
 st.subheader("Predicted Price")
 fig2 = plt.figure(figsize = (12,6))
