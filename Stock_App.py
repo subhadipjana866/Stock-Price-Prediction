@@ -70,8 +70,10 @@ testPredictPlot[100:len(test_data)-1,:] = test_predict
 st.write("Testing the prediction accuracy with test data")
 fig1 = plt.figure(figsize = (12,6))
 plt.rcParams['text.color'] = 'black'
-plt.plot(scaler.inverse_transform(test_data),label="actual_data")
-plt.plot(testPredictPlot,label="test_predict")
+plt.plot(scaler.inverse_transform(test_data),label="Actual price")
+plt.plot(testPredictPlot,label="Predicted Price")
+plt.xlabel('Days')
+plt.ylabel(f'{company} Stock Price')
 plt.legend()
 st.pyplot(fig1)
 
