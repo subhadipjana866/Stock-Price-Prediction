@@ -26,14 +26,8 @@ hour = curr_time.hour + 60
 minutes = curr_time.minute
 time = hour+minutes
 
-if(time <= 930):
-  today = dt.datetime.today()
-  end = today - dt.timedelta(days = 1)
-elif(time >= 930):
-  end = dt.datetime.today().strftime("%Y-%m-%d")
-
-
-
+today = dt.datetime.today()
+end = today - dt.timedelta(days = 1)
 
 start = dt.datetime(2010,1,1)
 yf.pdr_override()
@@ -44,7 +38,11 @@ st.write(data.tail())
 
 scaler=MinMaxScaler(feature_range=(0,1))
 df1 = scaler.fit_transform(data['Close'].values.reshape(-1,1))
-train_data = df1
+total_data = df1
+
+training_size = int(len(df1)*0.70)
+test_size = int(len(df1)-training_size)
+test_data = df1[training_size:len(df1),:1]
 
 def create_dataset(dataset, time_step):
   datax,datay = [],[]
@@ -55,21 +53,30 @@ def create_dataset(dataset, time_step):
   return np.array(datax),np.array(datay)
 
 time_step = 100
-x_train, y_train = create_dataset(train_data, time_step)
-x_train = x_train.reshape(x_train.shape[0],x_train.shape[1],1)
+x_test, y_test = create_dataset(test_data, time_step)
+x_test = x_test.reshape(x_test.shape[0],x_test.shape[1],1)
 
 
 
 model = load_model(mod_dict[company])
 
-train_predict = model.predict(x_train)
-train_predict = scaler.inverse_transform(train_predict)
-math.sqrt(mean_squared_error(y_train,train_predict))
+test_predict = model.predict(x_test)
+test_predict = scaler.inverse_transform(test_predict)
 
+testPredictPlot = np.empty_like(df1)
+testPredictPlot[:,:] = np.nan
+testPredictPlot[100:len(test_data)-1,:] = test_predict
+
+fig1 = plt.figure(figsize = (12,6))
+plt.rcParams['text.color'] = 'black'
+plt.plot(scaler.inverse_transform(test_data),label="actual_data")
+plt.plot(testPredictPlot,label="test_predict")
+plt.legend()
+st.pyplot(fig1)
 
 look_back=time_step
 
-x_input= train_data[len(train_data)-look_back:].reshape(1,-1)
+x_input= test_data[len(test_data)-look_back:].reshape(1,-1)
 temp_input = list(x_input)
 temp_input=temp_input[0].tolist()
 
@@ -102,14 +109,13 @@ while(i<prediction_days):
 output_price = scaler.inverse_transform(lst_output)
 xy =[]
 for i in range(prediction_days):
-  if (dt.datetime.today().weekday() != 6)|(dt.datetime.today().weekday() != 5):
-    xy.append((today + dt.timedelta(days = i)))
+   xy.append(f"Days {i}")
 
 st.subheader("Predicted Price")
-fig = plt.figure(figsize = (12,6))
+fig2 = plt.figure(figsize = (12,6))
 plt.rcParams['text.color'] = 'black'
 plt.plot(xy,output_price,label='Predicted Price', color='green')
 plt.xlabel('Days')
 plt.ylabel(f'Predicted {company} Stock Price')
 plt.legend()
-st.pyplot(fig)
+st.pyplot(fig2)
