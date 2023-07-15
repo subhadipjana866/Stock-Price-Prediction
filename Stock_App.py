@@ -20,7 +20,7 @@ code = """<script async src="https://pagead2.googlesyndication.com/pagead/js/ads
 
 a=os.path.dirname(st.__file__)+'/static/index.html'
 with open(a, 'r') as s:
-    data=s.read()
+    data = s.read()
     if len(re.findall('ca-', data))==0:
         with open(a, 'w') as ff:
             newdata=re.sub('<head>','<head>'+code,data)
