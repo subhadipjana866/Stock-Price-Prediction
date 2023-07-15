@@ -10,7 +10,6 @@ from sklearn.metrics import mean_squared_error
 import streamlit as st
 import os
 import re
-import fs
 
 with open('style.css')as f:
  st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html = True)
