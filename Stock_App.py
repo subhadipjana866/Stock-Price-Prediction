@@ -22,7 +22,7 @@ with open(a, 'r') as s:
         with open(a, 'w') as ff:
             newdata=re.sub('<head>','<head>'+code,data)
             ff.write(newdata)
-         print("success")
+        print("success")
 
 
 com_dict={"Tata Steel":"TATASTEEL.NS","Adani Green Energy":"ADANIGREEN.NS","Airtel":"BHARTIARTL.NS","UPL":"UPL.NS","Ultra Tech Cement":"ULTRACEMCO.NS","Tech Mahindra":"TECHM.NS","Tata Consultancy Services":"TCS.NS","Tata Consumer Products":"TATACONSUM.NS","NTPC":"NTPC.NS","Mahindra & Mahindra":"M&M.NS","Kotak Bank":"KOTAKBANK.NS","Indusland Bank":"INDUSLNDDBK.NS","ICICI Bank":"ICICIBANK.NS","HDFC":"HDFC.NS","Coal India":"COALINDIA.NS","AU Bank":"AUBANK.NS","Adani Enterprise":"ADANIENT.NS","Adani Ports":"ADANIPORTS.NS","Apollo Hospital":"APOLLOHOSP.NS","Axis Bank":"AXISBANK.NS","Bajaj Auto":"BAJAJ-AUTO.NS","Britannia":"BRITANNIA.NS","Grasim":"GRASIM.NS","HDFC Bank":"HDFCBANK.NS","HDFC Life Insuarance":"HDFCLIFE.NS","IDFC First Bank":"IDFCFIRSTB.NS","Reliance":"RELIANCE.NS","Sun Pharma":"SUNPHARMA.NS","Bajaj Finance":"BAJFINANCE.NS","HCL Technology":"HCLTECH.NS","Hero":"HEROMOTOCO.NS","Hindustan Uniliver":"HINDUNILVR.NS","ITC":"ITC.NS","Maruti":"MARUTI.NS","ONGC":"ONGC.NS","Panjab National Bank":"PNB.NS","SBI Life":"SBILIFE.NS","Titan":"TITAN.NS","Cipla":"CIPLA.NS","Power Grid Corporation":"POWERGRID.NS","Dr.Reddy's Laboratories":"DRREDDY.NS","Nestle India":"NESTLEIND.NS","BPCL":"BPCL.NS","Larson & Toubro":"LT.NS","Asian Paints":"ASIANPAINT.NS","Infosys":"INFY.NS","Eichar Motors":"EICHERMOT.NS","Hindalco":"HINDALCO.NS","Federal Bank":"FEDERALBNK.NS"}
