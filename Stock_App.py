@@ -8,6 +8,7 @@ import datetime as dt
 import yfinance as yf
 from sklearn.metrics import mean_squared_error
 import streamlit as st
+import os
 
 with open('style.css')as f:
  st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html = True)
