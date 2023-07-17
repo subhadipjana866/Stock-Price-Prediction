@@ -142,4 +142,4 @@ st.pyplot(fig2)
 with open("privacy-policy.md", "r") as file:
     privacy_policy_content = file.read()
 st.markdown(privacy_policy_content)
-st.markdown("[Privacy Policy](privacy-policy.md)")
+st.write(st.markdown("[Privacy Policy](privacy-policy.md)"))
