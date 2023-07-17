@@ -10,7 +10,11 @@ from sklearn.metrics import mean_squared_error
 import streamlit as st
 import os
 import re
-
+st.set_page_config(
+    page_title="Stock_App",
+    page_icon="🏠",
+)
+st.sidebar.success("Stock App")
 with open('style.css')as f:
  st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html = True)
 
@@ -26,11 +30,7 @@ with open(a, 'r') as s:
             ff.write(newdata)
         print("success")
 
-st.set_page_config(
-    page_title="Stock_App",
-    page_icon="🏠",
-)
-st.sidebar.success("Stock App")
+
 com_dict={"Tata Steel":"TATASTEEL.NS","Adani Green Energy":"ADANIGREEN.NS","Airtel":"BHARTIARTL.NS","UPL":"UPL.NS","Ultra Tech Cement":"ULTRACEMCO.NS","Tech Mahindra":"TECHM.NS","Tata Consultancy Services":"TCS.NS","Tata Consumer Products":"TATACONSUM.NS","NTPC":"NTPC.NS","Mahindra & Mahindra":"M&M.NS","Kotak Bank":"KOTAKBANK.NS","Indusland Bank":"INDUSLNDDBK.NS","ICICI Bank":"ICICIBANK.NS","HDFC":"HDFC.NS","Coal India":"COALINDIA.NS","AU Bank":"AUBANK.NS","Adani Enterprise":"ADANIENT.NS","Adani Ports":"ADANIPORTS.NS","Apollo Hospital":"APOLLOHOSP.NS","Axis Bank":"AXISBANK.NS","Bajaj Auto":"BAJAJ-AUTO.NS","Britannia":"BRITANNIA.NS","Grasim":"GRASIM.NS","HDFC Bank":"HDFCBANK.NS","HDFC Life Insuarance":"HDFCLIFE.NS","IDFC First Bank":"IDFCFIRSTB.NS","Reliance":"RELIANCE.NS","Sun Pharma":"SUNPHARMA.NS","Bajaj Finance":"BAJFINANCE.NS","HCL Technology":"HCLTECH.NS","Hero":"HEROMOTOCO.NS","Hindustan Uniliver":"HINDUNILVR.NS","ITC":"ITC.NS","Maruti":"MARUTI.NS","ONGC":"ONGC.NS","Panjab National Bank":"PNB.NS","SBI Life":"SBILIFE.NS","Titan":"TITAN.NS","Cipla":"CIPLA.NS","Power Grid Corporation":"POWERGRID.NS","Dr.Reddy's Laboratories":"DRREDDY.NS","Nestle India":"NESTLEIND.NS","BPCL":"BPCL.NS","Larson & Toubro":"LT.NS","Asian Paints":"ASIANPAINT.NS","Infosys":"INFY.NS","Eichar Motors":"EICHERMOT.NS","Hindalco":"HINDALCO.NS","Federal Bank":"FEDERALBNK.NS"}
 
 mod_dict = {"TATASTEEL.NS":"Data/TATASTEEL.h5","ADANIGREEN.NS":"Data/ADANIGREEN.h5","BHARTIARTL.NS":"Data/BHARTIARTL.h5","UPL.NS":"Data/UPL.h5","ULTRACEMCO.NS":"Data/ULTRACEMCO.h5","TECHM.NS":"Data/TECHM.h5","TCS.NS":"Data/TCS.h5","TATACONSUM.NS":"Data/TATACONSUM.h5","NTPC.NS":"Data/NTPC.h5","M&M.NS":"Data/M&M.h5","KOTAKBANK.NS":"Data/KOTAKBANK.h5","INDUSINDDBK.NS":"Data/INDUSINDDBK.h5","ICICIBANK.NS":"Data/ICICIBANK.h5","HDFC.NS":"Data/HDFC.h5","COALINDIA.NS":"Data/COALINDIA.h5","AUBANK.NS":"Data/AUBANK.h5","ADANIENT.NS":"Data/ADANIENT.h5","ADANIPORTS.NS":"Data/ADANIPORTS.h5","APOLLOHOSP.NS":"Data/APOLLOHOSP.h5","AXISBANK.NS":"Data/AXISBANK.h5","BAJAJ-AUTO.NS":"Data/BAJAJ-AUTO.h5","BRITANNIA.NS":"Data/BRITANNIA.h5","GRASIM.NS":"Data/GRASIM.h5","HDFCBANK.NS":"Data/HDFCBANK.h5","HDFCLIFE.NS":"Data/HDFCLIFE.h5","IDFCFIRSTB.NS":"Data/IDFCFIRSTB.h5","RELIANCE.NS":"Data/RELIANCE.h5","SUNPHARMA.NS":"Data/SUNPHARMA.h5","BAJFINANCE.NS":"Data/BAJFINANCE.h5","HCLTECH.NS":"Data/HCLTECH.h5","HEROMOTOCO.NS":"Data/HEROMOTOCO.h5","HINDUNILVR.NS":"Data/HINDUNILVR.h5","ITC.NS":"Data/ITC.h5","MARUTI.NS":"Data/MARUTI.h5","ONGC.NS":"Data/ONGC.h5","PNB.NS":"Data/PNB.h5","SBILIFE.NS":"Data/SBILIFE.h5","TITAN.NS":"Data/TITAN.h5","CIPLA.NS":"Data/CIPLA.h5","POWERGRID.NS":"Data/POWERGRID.h5","DRREDDY.NS":"Data/DRREDDY.h5","NESTLEIND.NS":"Data/NESTLEIND.h5","BPCL.NS":"Data/BPCL.h5","LT.NS":"Data/LT.h5","ASIANPAINT.NS":"Data/ASIANPAINT.h5","INFY.NS":"Data/INFY.h5","EICHERMOT.NS":"Data/EICHERMOT.h5","HINDALCO.NS":"Data/HINDALCO.h5","FEDERALBNK.NS":"Data/FEDERALBNK.h5"}
