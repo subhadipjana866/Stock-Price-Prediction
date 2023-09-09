@@ -18,17 +18,17 @@ st.sidebar.success("Stock App")
 with open('style.css')as f:
  st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html = True)
 
-code = """<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7367141985992219"
-     crossorigin="anonymous"></script>"""
+# code = """<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7367141985992219"
+#      crossorigin="anonymous"></script>"""
 
-a=os.path.dirname(st.__file__)+'/static/index.html'
-with open(a, 'r') as s:
-    data = s.read()
-    if len(re.findall('ca-', data))==0:
-        with open(a, 'w') as ff:
-            newdata=re.sub('<head>','<head>'+code,data)
-            ff.write(newdata)
-        print("success")
+# a=os.path.dirname(st.__file__)+'/static/index.html'
+# with open(a, 'r') as s:
+#     data = s.read()
+#     if len(re.findall('ca-', data))==0:
+#         with open(a, 'w') as ff:
+#             newdata=re.sub('<head>','<head>'+code,data)
+#             ff.write(newdata)
+#         print("success")
 
 
 com_dict={"Tata Steel":"TATASTEEL.NS","Adani Green Energy":"ADANIGREEN.NS","Airtel":"BHARTIARTL.NS","UPL":"UPL.NS","Ultra Tech Cement":"ULTRACEMCO.NS","Tech Mahindra":"TECHM.NS","Tata Consultancy Services":"TCS.NS","Tata Consumer Products":"TATACONSUM.NS","NTPC":"NTPC.NS","Mahindra & Mahindra":"M&M.NS","Kotak Bank":"KOTAKBANK.NS","Indusland Bank":"INDUSLNDDBK.NS","ICICI Bank":"ICICIBANK.NS","HDFC":"HDFC.NS","Coal India":"COALINDIA.NS","AU Bank":"AUBANK.NS","Adani Enterprise":"ADANIENT.NS","Adani Ports":"ADANIPORTS.NS","Apollo Hospital":"APOLLOHOSP.NS","Axis Bank":"AXISBANK.NS","Bajaj Auto":"BAJAJ-AUTO.NS","Britannia":"BRITANNIA.NS","Grasim":"GRASIM.NS","HDFC Bank":"HDFCBANK.NS","HDFC Life Insuarance":"HDFCLIFE.NS","IDFC First Bank":"IDFCFIRSTB.NS","Reliance":"RELIANCE.NS","Sun Pharma":"SUNPHARMA.NS","Bajaj Finance":"BAJFINANCE.NS","HCL Technology":"HCLTECH.NS","Hero":"HEROMOTOCO.NS","Hindustan Uniliver":"HINDUNILVR.NS","ITC":"ITC.NS","Maruti":"MARUTI.NS","ONGC":"ONGC.NS","Panjab National Bank":"PNB.NS","SBI Life":"SBILIFE.NS","Titan":"TITAN.NS","Cipla":"CIPLA.NS","Power Grid Corporation":"POWERGRID.NS","Dr.Reddy's Laboratories":"DRREDDY.NS","Nestle India":"NESTLEIND.NS","BPCL":"BPCL.NS","Larson & Toubro":"LT.NS","Asian Paints":"ASIANPAINT.NS","Infosys":"INFY.NS","Eichar Motors":"EICHERMOT.NS","Hindalco":"HINDALCO.NS","Federal Bank":"FEDERALBNK.NS"}
